@@ -10,25 +10,40 @@ $ open https://docs.docker.com/get-started/
 
 ## Tasks
 
-- [ ] 1. Создать публичный репозиторий с названием **lab08** на сервисе **GitHub**
-- [ ] 2. Ознакомиться со ссылками учебного материала
-- [ ] 3. Выполнить инструкцию учебного материала
-- [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
+- [x] 1. Создать публичный репозиторий с названием **lab08** на сервисе **GitHub**
+- [x] 2. Ознакомиться со ссылками учебного материала
+- [x] 3. Выполнить инструкцию учебного материала
+- [x] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
 ```sh
-$ export GITHUB_USERNAME=<имя_пользователя>
+Cloning into 'lab08'...
+remote: Enumerating objects: 73, done.
+remote: Counting objects: 100% (73/73), done.
+remote: Compressing objects: 100% (49/49), done.
+remote: Total 73 (delta 23), reused 73 (delta 23), pack-reused 0
+Receiving objects: 100% (73/73), 948.58 KiB | 1.27 MiB/s, done.
+Resolving deltas: 100% (23/23), done.
+$ export GITHUB_USERNAME=scorpy2013
 ```
 
 ```
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
+~/Documents/GitHub/scorpy2013/lab08 ~/Documents/GitHub/scorpy2013/lab08
 $ source scripts/activate
 ```
 
 ```sh
 $ git clone https://github.com/${GITHUB_USERNAME}/lab07 lab08
+Cloning into 'lab08'...
+remote: Enumerating objects: 145, done.
+remote: Counting objects: 100% (145/145), done.
+remote: Compressing objects: 100% (99/99), done.
+Receiving objects:  50% (73/145), 628
+Receiving objects: 100% (145/145), 1.29 MiB | 1.62 MiB/s, done.
+Resolving deltas: 100% (46/46), done.
 $ cd lab08
 $ git submodule update --init
 $ git remote remove origin
@@ -138,12 +153,25 @@ script:
 $ git add Dockerfile
 $ git add .travis.yml
 $ git commit -m"adding Dockerfile"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .travis.yml.swp
+        lab08/
+
+nothing added to commit but untracked files present (use "git add" to track)
 $ git push origin master
+Everything up-to-date
 ```
 
 ```sh
 $ travis login --auto
+Successfully logged in as scorpy2013!
 $ travis enable
+Detected repository as scorpy2013/lab08, is this correct? |yes| yes
+scorpy2013/lab08: enabled :)
 ```
 
 ## Report
@@ -152,6 +180,13 @@ $ travis enable
 $ popd
 $ export LAB_NUMBER=08
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+Cloning into 'tasks/lab08'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 73 (delta 4), reused 3 (delta 1), pack-reused 58
+Receiving objects: 100% (73/73), 950.66 KiB | 1.34 MiB/s, done.
+Resolving deltas: 100% (22/22), done.
 $ mkdir reports/lab${LAB_NUMBER}
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
 $ cd reports/lab${LAB_NUMBER}
